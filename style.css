@@ -1,0 +1,164 @@
+/*全体*/
+
+
+@charset "UTF-8";
+*{
+  margin:0px;
+  padding:0px;
+}
+
+body {
+  color: #383e45;
+  font-size: 0.9rem;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+*{
+  box-sizing:border-box;
+}
+
+/*header*/
+
+header {
+  font-size:50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  background-color:dimgrey;
+  color:white;
+}
+
+header h1{
+  padding:0px 20px 10px 50px;
+}
+
+header li{
+  font-size:90px;
+  float:left;
+  padding:0px 30px;
+    font-family:"HaloHandletter";
+}
+
+/*main*/
+
+.mainvidual img{
+  width:100%;
+}
+
+.about{
+  width:600px;
+  margin:auto;
+}
+.about h2{
+  font-size:180px;
+  text-align:center;
+  padding-top:70px;
+}
+.content{
+  text-align:center;
+}
+.content img{
+  width:200px;
+  height:200px;
+}
+.content li{
+  font-size:20px;
+}
+.content p{
+  text-align:left;
+  width:400px;
+  margin:auto;
+  padding-top:30px;
+}
+
+.works{
+  background-color:beige;
+}
+.works ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:90px;
+}
+
+.clear{
+  clear:left;
+}
+.works h2{
+  font-size:180px;
+  text-align:center;
+  margin-top:90px;
+}
+.works li{
+  margin:0px 20px;
+  width:30%;
+}
+.works p{
+  height:30px;
+}
+
+.container{
+  width:50%;
+  margin:auto;
+  text-align:center;
+}
+.contact{
+  background-color:#b6b6b6;
+  text-align:center;
+  margin:auto;  
+}
+.contact h2{
+  font-size:180px;
+}
+.contact dl {
+  display: flex;
+  flex-wrap: wrap;
+  margin:30px;
+  padding-right:130px
+}
+.contact dt {
+  width: 15%;
+}
+.contact dd {
+  width: 85%;
+  margin-bottom: 10px;
+}
+.contact dd input,
+.contact dd textarea {
+  width: 100%;
+  border: solid 1px #c8c8c8;
+  padding: 10px;
+}
+.contact dd textarea {
+  height: 10rem;
+}
+.contact .button {
+  text-align: center;
+}
+.contact .button input {
+  width: 200px;
+  background-color: #24292e;
+  color: #fff;
+  padding: 15px 0;
+  border: solid 1px #24292e;
+  margin-bottom: 30px;
+}
+.contact .button input:hover {
+  background: #fff;
+  color: #24292e;
+}
+
+footer{
+  background-color:#9a9a9a;
+  text-align:center;
+  color:white;
+}
+
