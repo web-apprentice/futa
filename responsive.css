@@ -1,4 +1,4 @@
-@media(max-width:1170px){
+@media(max-width: 1170px){
     html{
         font-size:50px;
     }
@@ -55,7 +55,7 @@
         height:100%;
     }
     .works p{
-        font-size:0.2rem;
+        font-size: 0.4rem;
         height:30px;
     }
 }
@@ -91,7 +91,8 @@
     .content p{
       text-align:left;
       width:300px;
-      padding-top:30px;
+      padding-top:30px auto 40px;
+      margin: 30px auto 50px;
     }
     .works h2{
           font-size:80px;
@@ -108,6 +109,7 @@
     .works ul{
         display:block;
         margin:auto;
+        padding: 0px 20px 70px 20px;
     }
     .works li{
         width:100%;
@@ -142,3 +144,4 @@
         height:24px;
     }
 }
+
