@@ -1,4 +1,7 @@
 @media(max-width:1170px){
+    html{
+        font-size:50px;
+    }
     .contact .button input {
         width: 200px;
         margin-bottom:20px
@@ -26,7 +29,7 @@
           font-size:100px;
     }
     .contact h2{
-          font-size:60px;
+          font-size:100px;
     }
     .works ul{
         display:block;
@@ -52,7 +55,7 @@
         height:100%;
     }
     .works p{
-        font-size:14px;
+        font-size:0.2rem;
         height:30px;
     }
 }
@@ -77,20 +80,24 @@
     }
     header h1{
         font-size:40px;
+    }
     header li{
-        font-size:20px;
+        font-size:30px;
         clear:both;
     }
     .about h2{
-          font-size:50px;
+          font-size:80px;
     }
-    .about p{
-        width:300px;
+    .content p{
+      text-align:left;
+      width:300px;
+      padding-top:30px;
+    }
     .works h2{
-          font-size:50px;
+          font-size:80px;
     }
     .contact h2{
-          font-size:50px;
+          font-size:60px;
           padding-top:20px;
     }
     .works p{
@@ -129,5 +136,9 @@
     }
     .contact{
         width:100%;
+    }
+    .icon-image{
+        width:24px;
+        height:24px;
     }
 }
