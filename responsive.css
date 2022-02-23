@@ -75,6 +75,8 @@
     container{
         width:100%;
     }
+    header h1{
+        font-size:30px;
     header li{
         font-size:40px;
         clear:both;
