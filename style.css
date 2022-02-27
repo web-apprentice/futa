@@ -109,14 +109,15 @@ header li{float: left;}
 }
 #work{}
 #work ul{display: flex;flex-wrap: wrap;}
-#work li{
-    width: 90%;
-}
+
 
 @media(max-width:760px){
     #work iframe{
         width:90%;
         height: 180px;
+    }
+    #work li{
+        width: 90%;
     }
     #work p{
         width:90%;
