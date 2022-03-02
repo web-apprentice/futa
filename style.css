@@ -350,3 +350,42 @@ nav {
     font-weight: 400;
   }
   
+
+
+  /*confirm.php*/
+  #confirm{width: 90%;max-width: 900px;margin: 70px auto;padding-top: 30px;text-align: center;border: 0.1px solid #403939;background-color: #8bc34a21;}
+  #confirm h3{
+    font-size: 2rem;
+}
+  #confirm p{
+    font-size: 1.5rem;
+}
+  #confirm dl{margin: 40px auto 80px auto;}
+  #confirm dt{font-size: 30px;border-bottom: 1px solid;width: 90%;max-width: 500px;text-align: left;}
+  #confirm dd{
+      font-size: 25px;
+      margin-bottom: 30px;
+      width: 90%;
+      max-width: 500px;
+      text-align: left;
+  }
+
+  @media(max-width:760px){
+    #confirm {
+        width:98%;
+        margin: 20px auto;
+    }
+    #confirm h3{font-size: 1rem;}
+    #confirm p{
+        font-size: 0.8rem;
+    }
+    #confirm dt{
+        padding: 5px 5px;
+        font-size:12px;
+    }
+    #confirm dd{
+        padding:10px 5px;
+        font-size:12px;
+        text-align:left;
+    }
+}
