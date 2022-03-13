@@ -1,18 +1,49 @@
 @charset "UTF-8";
 /*全体へのCSS*/
+html{
+    font-size:100%;
+}
 *{
+    box-sizing:border-box;
     margin: 0px auto;
     padding:0px;
-    box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
+body{
+    color:#333;
+    font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    letter-spacing:0.1em;
+}
+a{
+    color:#333;
+    text-decoration:none;
+}
+
+li{
+    list-style:none;
+}
+
 
 /*一部共通のCSS*/
 
 h2{
-    font-size: 6rem;
-    margin-bottom: 20px;
+    font-size: 5rem;
+    margin-bottom: 30px;
+    position:relative;
+}
+h2::after{
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: #333;
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+      
 }
 .wrapper{
     width: 1170px;
@@ -22,167 +53,303 @@ h2{
     display:none;
 }
 
-@media(max-width:1170px){
+@media(max-width:950px){
     .wrapper{
         width:100%;
     }
-
-
 }
-
 @media(max-width:760px){
     h2{
-        font-size:4rem;
+        font-size:3rem;
     }
 }
 
 /*header*/
-header{
-    display:flex;
-    align-items: center;
+#header{
     height: 150px;
+    display: flex;
+    align-items: center;
 }
-header h1{
+#header h1{
     font-size:7rem;
 }
-header h1:hover{
+#header h1:hover{
     cursor: pointer;
+    color:#403939;
 }
-header img{height: 40px;width: 40px;}
-header a{padding-left: 30px;font-size: 25px;color: black;}
-header a:hover{
+#header img{
+    height: 40px;
+    width: 40px;}
+#header img:hover{
+    opacity:0.9;
+    transition:0.3s;
+    transform:scale(1.2);
+}
+#header a{
+    padding-left: 30px;
+    font-size: 25px;
+    color: black;}
+#header a:hover{
+    transition:0.3s;
     color:#9e9e9e;
-}
-header ul{
 }
 header li{float: left;}
 
+
 @media(max-width:760px){
-    header h1{
+    #header h1{
         font-size: 4rem;
         padding-left: 5px;
     }
     .header_list{
         display: none;
     }
-    header a{
+    #header a{
         padding-left:10px;
         float:left;
     }
-    header img{
+    #header img{
         height: 30px;
         width:30px;
     }
 }
 
-/*mainVidual*/
-.mainVidual img{/* height: ; */width: 100%;max-width: 1920px;height: 800px;object-fit: cover;}
+/*mainVisual*/
+#mainVisual{
+    position:relative;
+    height:920px;
+    margin-bottom:120px;
+}
+/*
+メインビジュアル
+animationを使用して、画像をフェードイン、フェードアウトで切り替えを行う
 
-@media(max-width:760px){
-    .mainVidual img{
+※画像のフェード切り替えは、CSSアニメーション以外にも
+jQueryのプラグインを使う等便利なやり方が色々ありますが、
+今回は学習のためにアニメーションを使用しています。
+*/
+#mainVisual .fade li{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right:0;
+    /* 最初は3枚の画像を非表示にしておく */
+    opacity: 0;
+    /*
+    アニメーションを実行
+    fade：下で定義している「@keyframes fade」を実行
+    15s：「@keyframes fade」の処理を15秒かけて実行
+    infinite：アニメーションの処理を無限に繰り返す
+    */
+    animation:fade 15s infinite;
+}
+/*
+1枚目の画像のアニメーション実行タイミングを設定
+「animation-delay: 0s;」ですぐに実行
+*/
+#mainVisual .fade li:nth-child(1){
+  animation-delay:0s;
+}
+#mainVisual .fade li:nth-child(2){
+  animation-delay:5s;
+}
+#mainVisual .fade li:nth-child(3){
+  animation-delay:10s;
+}
+#mainVisual .fade img{
+  width:100%;
+  height:920px;
+  object-fit:cover;
+}
+@keyframes fade{
+    0% {
+      opacity:0;
+    }
+    15%{
+      opacity:1;
+    }
+    30%{
+      opacity:1;
+    }
+    45%{
+      opacity:0;
+    }
+    100%{
+      opacity:0;
+    }
+  }
+
+
+@media screen and (max-width:760px){
+    #mainVisual{
+        margin-bottom:40px;
         height:400px;
-    }    
+    }
+    #mainVisual .fade img{
+        height:400px;
+    }
 }
 
 /*left & right*/
-.container{display: flex;flex-wrap:wrap;width: 1170px;}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1170px;}
 
 /*left news*/
 .left{
     width: 60%;
-    padding: 30px 0px;
 }
-#news{width: 90%;text-align: center;}
+#news{
+    width: 90%;
+    text-align: center;
+}
 #news a{
     display: flex;
 }
-#news ul{}
-#news li{margin-bottom: 10px;border-top: 1px solid #837c7c;}
-#news img{width: 600px;height: 130px;}
-#news h3{color: black;}
-#news p{width: 90%;text-align: left;color: #8d8d8d;}
-.box{
+#news li{
+    padding-top: 10px;
+    border-top: 1px solid #837c7c;
 }
-.scroll{
+#news li:hover{
+    opacity:0.9;
+    transition:0.3s;
+    transform:scale(1.05);
+}
+#news .news-photo{
+    height:110px;
+    width:150px;
+}
+#news img{
+    height:110px;
+    width:150px;
+    object-fit:cover;
+}
+#news h3{
+    color: black;
+}
+#news p{
+    width: 90%;text-align: left;color: #8d8d8d;
+}
+#news p span{
+    float:right;
+}
+#news .scroll{
     height: 650px;
     overflow-y: scroll;
 }
+
+
 @media(max-width:1170px){
     .container{
         width:100%;
     }
 }
 
-
-@media(max-width:760px){
-    .left{
+@media screen and (max-width:760px){
+    .container .left{
         width:100%;
     }
-    .scroll{
+    #news .scroll{
         height: 350px;
     }
 
     #news {
         width:98%;
+        margin-bottom:40px;
     }
     #news img{width: 122px;height: 76px;}
-    #news h3{color: black;font-size: 15px;}
-    #news p{width: 90%;text-align: left;color: #8d8d8d;font-size: 10px;}
+    #news h3{color: black;font-size: 0.6rem;text-align: left;}
+    #news p{width: 90%;text-align: left;color: #8d8d8d;font-size: 0.5rem;}
 }
 
 
 /*right*/
-.right{width: 40%;text-align: center;}
+.right{
+    width: 40%;
+    text-align: center;
+}
 
 /*about*/
-.container_about{
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 30px 0px;
+#about{
+    margin-bottom:20px;
 }
-#about{}
-#about img{height: 150px;width: 150px;}
-#about ul{
+#about img{
+    height: 150px;
+    width: 150px;
+}
+#about .name{
+    font-size: 1.5rem;
+}
+#about .job{
+    font-size: 1rem;
+}
 
+#about p{
+    padding: 10px 0px;
+    max-width: 500px;
+    text-align:left;
+    width: 93%;
 }
-#about li{font-size: 1.5rem;}
-#about p{padding: 10px 0px;max-width: 500px;text-align:left;width: 93%;}
 
 /*banner*/
 #banner{display: flex;flex-direction: column;}
-#banner img{margin-bottom: 10px;width: 90%;height: 80px;}
+#banner img{margin-bottom: 15px;width: 90%;height: 80px;}
 #banner a{
     border: 1px solid #ab6161;
     padding: 23px 100px;
     margin-bottom: 25px;
     background-color: aquamarine;
-    font-size: 20px;
+    font-size: 1rem;
     width: 90%;
 }
 
-@media(max-width:760px){
+@media screen and (max-width:760px){
     .right{
         width:100%;
     }
+    #about{
+        width:100%;
+        margin-bottom:40px;
+    }
     #about p{
-        font-size:12px;
+        font-size:0.7rem;
         width:90%;
+    }
+    #banner img{
+        max-width:400px;
+    }
+    #banner a{
+        max-width:400px;
     }
     
 }
 
 /*work*/
 .container_work{
-    background-color: rgb(255 248 165 / 50%);
-    padding: 70px 0px;
 }
-#work{}
-#work ul{display: flex;flex-wrap: wrap;}
-
+#work{
+    margin:120px auto;
+}
+#work ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+#work li{
+    margin-bottom:20px;
+}
+#work iframe{
+    width:488px;
+    height:363px;
+}
 
 @media(max-width:760px){
+    #work{
+        margin:0 auto 40px auto;
+    }
     #work iframe{
         width:90%;
-        height: 180px;
+        height: 190px;
     }
     #work li{
         width: 90%;
@@ -198,43 +365,62 @@ header li{float: left;}
 
 /*contact*/
 .container_contact{
-    background-color: rgb(219 255 221 / 50%);
-    padding: 30px 0px;
+
 }
-#contact{padding: 40px 0px;}
-#contact p{
-    font-size:12px;
+#contact{
+    margin-bottom:60px;
+}
+#contact .line{
+    padding-bottom:60px;
+    width:70%;
+    position: relative;
+    border: solid 3px #706f6f;
+}
+#contact .line::after{
+content: "";
+width: 100%;
+border-right: solid 2px #706f6f;
+border-bottom: solid 2px #706f6f;
+padding: 160px 0;
+position: absolute;
+right: -15px;
+bottom: -15px;
+z-index:-1;
+}
+
+#contact h3{
+    font-size:1.3rem;
     color: #706f6f;
-    max-width: 500px;
-    text-align: left;
+  margin-bottom:20px;
 }
-#contact dl{display: flex;flex-wrap: wrap;}
-#contact dt{width: 30%;text-align: right;padding: 10px 20px;}
-#contact dd{width: 70%;text-align: left;padding: 10px 0px;}
-.button{width: 100px;}
-input{width: 60%;}
-textarea{width: 60%;}
+#contact .btn{
+  font-size:2rem;
+  font-weight:bold;
+  padding:15px;
+  background-color:#ff2a2a;
+  color:#fff;
+  border:3px solid #ff2a2a;
+  border-radius:30px;
+}
+#contact .btn:hover{
+  transition:0.5s;
+  background-color:#fff;
+  color:#ff2a2a;
+}
 
 
 @media(max-width:760px){
-    #contact p{
-        width:90%;
+    #contact .line{
         padding-bottom: 20px;
-    }
-    #contact dt{
-        width:20%;
-        font-size:13px;
-        padding:10px 5px 10px 0px;
-    }
-    #contact dd{
-        width:80%;
-        font-size:13px;
-    }
-    input{
         width:90%;
     }
-    textarea{
-        width:90%;
+    #contact .btn{
+        font-size:1rem;
+        padding:8px;
+    }
+    #contact .line::after{
+        padding:100px;
+        width:70%;
     }
 }
 
@@ -397,15 +583,7 @@ nav {
   #confirm p{
     font-size: 1.5rem;
 }
-  #confirm dl{margin: 40px auto 80px auto;}
-  #confirm dt{font-size: 30px;border-bottom: 1px solid;width: 90%;max-width: 500px;text-align: left;}
-  #confirm dd{
-      font-size: 25px;
-      margin-bottom: 30px;
-      width: 90%;
-      max-width: 500px;
-      text-align: left;
-  }
+
 
   @media(max-width:760px){
     #confirm {
@@ -416,13 +594,5 @@ nav {
     #confirm p{
         font-size: 0.8rem;
     }
-    #confirm dt{
-        padding: 5px 5px;
-        font-size:12px;
-    }
-    #confirm dd{
-        padding:10px 5px;
-        font-size:12px;
-        text-align:left;
-    }
+
 }
