@@ -66,7 +66,7 @@ h2::after{
 
 /*header*/
 #header{
-    height: 150px;
+    height: 153px;
     display: flex;
     align-items: center;
 }
@@ -117,7 +117,7 @@ header li{float: left;}
 /*mainVisual*/
 #mainVisual{
     position:relative;
-    height:1120px;
+    height:1020px;
     margin-bottom:120px;
 }
 /*
@@ -157,7 +157,7 @@ jQueryのプラグインを使う等便利なやり方が色々ありますが�
   animation-delay:10s;
 }
 #mainVisual .fade li::after {
-  content: "";
+  /* content: ""; */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -167,7 +167,7 @@ jQueryのプラグインを使う等便利なやり方が色々ありますが�
 }
 #mainVisual .fade img{
   width:100%;
-  height:1120px;
+  height:1020px;
   object-fit:cover;
 }
 @keyframes fade{
@@ -192,10 +192,12 @@ jQueryのプラグインを使う等便利なやり方が色々ありますが�
 @media screen and (max-width:760px){
     #mainVisual{
         margin-bottom:40px;
-        height:400px;
+        height: 300px;
     }
     #mainVisual .fade img{
-        height:400px;
+        height: 330px;
+        width: 100%;
+        object-fit: cover;
     }
   
 }
